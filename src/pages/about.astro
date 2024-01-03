@@ -1,18 +1,24 @@
 ---
+import '../styles/global.css';
 const pageTitle = "About Me";
 
 const identity = {
-firstName: "Sarah",
-country: "Canada",
-occupation: "Technical writer",
-hobbies: ["photography", "birdwatching", "baseball" ],
+firstName: "Shakeel",
+country: "UK",
+occupation: "Web Designer/Developer",
+hobbies: ["F1", "Technology", "Cars" ],
 };
 
-const skills = ["html", "css", "Javascript", "React", "Astro", "Writing Docs"];
+const skills = ["html", "css", "Javascript", "Svelte", "Astro", "UI/UX Design"];
+const aSkill = ["Brand style", "Brand messaging", "User Experience Design", "User Interface Design", "On page optimisation","Off page optimisation","Technical optimisation", "Google ads account management"];
 
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -22,6 +28,17 @@ const goal = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<style define:vars={{skillColor, fontWeight, textCase}}>
+			h1 {
+			  color: purple;
+			  font-size: 4rem;
+			}
+			.skill {
+				color: var(--skillColor);
+				font-weight: var(--fontWeight);
+				text-transform: var(--textCase);
+			}
+		</style>
 	</head>
 	<body>
 		<a href="/">Home</a>
@@ -33,20 +50,26 @@ const goal = 3;
         <p>More info:
            <a href="https://www.linkedin.com/in/shakeelquadri" target="_blank">Linkedin Profile</a> 
         </p>
-		<p>Here are some more facts about other people:</p>
+		<p>Here are some more facts about me:</p>
 		<ul>
-			<li>Their name is {identity.firstName}.</li>
+			<li>My name is {identity.firstName}.</li>
 			<li>They live in {identity.country} and they work as a {identity.occupation}.</li>
 			{identity.hobbies.length >= 2 &&
 			 <li>Two of their hobbies are : {identity.hobbies[0]} and {identity.hobbies[1]}</li>
 			}
 		</ul>
-		<p>Further skills are:</p>
+		<p>My skills are:</p>
 		<ul>
-			{skills.map((skill) => <li>{skill}</li>)}
+			{skills.map((skill) => <li class="skill">{skill}</li>)}
 		</ul>
 		{happy && <p>I am happy to be learning Astro!</p>}
 		{finished && <p>I have finished this tutorial!</p>}
 		{goal === 3 ? <p>My goal is to finish in 3 days</p> : <p>My goal is not 3 days</p>}
+
+		<h2>Additional Skills</h2>
+		Building websites isnt my only skill set, in fact that's my newest skillset. For the past 17 years I have been doing the following:
+		<ul>
+			{aSkill.map((aSkill) => <li class="aSkill">{aSkill}</li>)}
+		</ul>
 	</body>
 </html>
