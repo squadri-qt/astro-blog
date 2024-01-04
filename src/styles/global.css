@@ -80,3 +80,6 @@ html {
         display: none;
       }
   }
+  .featuredImage {
+    float: left;
+  }
