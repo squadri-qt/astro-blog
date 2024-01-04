@@ -2,7 +2,7 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: My 4th blog post
 description: "My 4th blog post where I created the frontmatter from scratch"
-tags: frontmatter, markdown, layouts
+tags: [frontmatter, markdown, layouts]
 pubDate: 04/01/2024
 image: 
     url: "https://docs.astro.build/assets/rays.webp"
