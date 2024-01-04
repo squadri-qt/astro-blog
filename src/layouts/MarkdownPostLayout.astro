@@ -8,4 +8,5 @@ const { frontmatter } = Astro.props;
 <p>Edited last:{frontmatter.pubDate.slice(0,10)}</p>
 <p>Intro: {frontmatter.description}</p>
 <slot />
+<a href=/blog>Back to blog</a>
 </BaseLayout>
